@@ -1,1 +1,436 @@
 
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Detailing Călărași - polish auto, corecție lac, detailing interior și tratamente de protecție. Contactează-ne pentru o programare.">
+  <title>Detailing Călărași | Îngrijire auto premium</title>
+
+  <style>
+    :root {
+      --red: #e32636;
+      --dark: #101010;
+      --panel: #191919;
+      --white: #f7f7f7;
+      --muted: #b5b5b5;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: rgba(16,16,16,.96);
+      border-bottom: 1px solid #292929;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      line-height: 1.25;
+    }
+
+    .logo span { color: var(--red); }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .btn {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 13px 21px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: .2s;
+      border: 1px solid var(--red);
+    }
+
+    .btn:hover {
+      background: #bd1928;
+      border-color: #bd1928;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: #777;
+    }
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.42)),
+        linear-gradient(0deg, rgba(0,0,0,.45), transparent),
+        url("garaj-detailing.jpg") center 55% / cover no-repeat;
+    }
+
+    .hero-content {
+      padding: 90px 0;
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.08;
+      margin: 20px 0;
+      letter-spacing: -1.5px;
+    }
+
+    h1 span { color: var(--red); }
+
+    .hero p {
+      max-width: 550px;
+      color: #ddd;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    section { padding: 82px 0; }
+
+    .section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 42px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin: 10px 0;
+    }
+
+    .section-head p { color: var(--muted); }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      background: var(--panel);
+      border: 1px solid #303030;
+      padding: 28px;
+      border-radius: 9px;
+      transition: .2s;
+    }
+
+    .service:hover {
+      border-color: var(--red);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      color: var(--red);
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .service h3 { margin-bottom: 9px; font-size: 20px; }
+    .service p { color: var(--muted); font-size: 15px; }
+
+    .about {
+      background: #171717;
+      border-top: 1px solid #282828;
+      border-bottom: 1px solid #282828;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .about-photo {
+      width: 100%;
+      display: block;
+      border-radius: 9px;
+      border: 1px solid #393939;
+    }
+
+    .about h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      margin: 12px 0 20px;
+    }
+
+    .about p { color: var(--muted); margin-bottom: 20px; }
+
+    .features {
+      list-style: none;
+      margin: 24px 0;
+    }
+
+    .features li { margin: 12px 0; }
+    .features li::before {
+      content: "✓";
+      color: var(--red);
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #202020, #121212);
+      border: 1px solid #363636;
+      border-radius: 12px;
+      padding: 42px 24px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(27px, 4vw, 40px);
+      margin: 10px 0;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin: 0 auto 25px;
+      max-width: 540px;
+    }
+
+    footer {
+      border-top: 1px solid #292929;
+      padding: 27px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      background: #20bd5a;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 4px 20px #0008;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links { gap: 12px; font-size: 12px; }
+      .nav-links .nav-cta { display: none; }
+      .logo { font-size: 16px; }
+      .hero { min-height: 520px; background-position: 57% center; }
+      .hero-content { padding: 65px 0; }
+      .hero p { font-size: 15px; }
+      section { padding: 62px 0; }
+      .services { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .service { padding: 24px; }
+      .whatsapp-float { right: 12px; bottom: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a href="#acasa" class="logo">
+        DETAILING<br><span>CĂLĂRAȘI</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#servicii">Servicii</a>
+        <a href="#despre">Despre noi</a>
+        <a href="#contact">Contact</a>
+        <a class="btn nav-cta"
+           href="https://wa.me/40721874239?text=Bun%C4%83!%20Doresc%20o%20programare%20la%20detailing."
+           target="_blank" rel="noopener">Programează-te</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="acasa">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Îngrijire auto premium</div>
+          <h1>Redăm mașinii tale <span>strălucirea.</span></h1>
+          <p>
+            Atenție la detalii, polish auto și servicii de detailing
+            pentru un aspect îngrijit și o protecție de durată.
+          </p>
+          <div class="actions">
+            <a class="btn"
+               href="https://wa.me/40721874239?text=Bun%C4%83!%20Doresc%20o%20programare%20la%20detailing."
+               target="_blank" rel="noopener">Solicită o programare</a>
+            <a class="btn btn-outline" href="#servicii">Descoperă serviciile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicii">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Ce oferim</div>
+          <h2>Serviciile noastre</h2>
+          <p>Îngrijire adaptată nevoilor mașinii tale. Contactează-ne
+             pentru detalii și o ofertă personalizată.</p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <div class="service-icon">✦</div>
+            <h3>Polish și corecție lac</h3>
+            <p>Îmbunătățirea luciului și reducerea imperfecțiunilor
+               vizibile ale vopselei, în funcție de starea lacului.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">◈</div>
+            <h3>Detailing interior</h3>
+            <p>Curățare și îngrijire atentă a suprafețelor interioare,
+               pentru un habitaclu mai curat și mai plăcut.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">⬡</div>
+            <h3>Protecție ceramică</h3>
+            <p>Tratament de protecție pentru vopsea, ales în funcție
+               de suprafață și de rezultatul dorit.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">≈</div>
+            <h3>Tratament hidrofob</h3>
+            <p>Ajută apa să se scurgă mai ușor de pe suprafețele
+               tratate, inclusiv de pe geamuri.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">◇</div>
+            <h3>Detailing compartiment motor</h3>
+            <p>Curățare atentă a compartimentului motor, cu grijă
+               pentru componentele și materialele existente.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">✧</div>
+            <h3>Protecție și întreținere</h3>
+            <p>Soluții de întreținere pentru păstrarea aspectului
+               îngrijit al caroseriei după detailing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="despre">
+      <div class="container about-grid">
+        <div>
+          <img class="about-photo"
+               src="garaj-detailing.jpg"
+               alt="Garajul Detailing Călărași">
+        </div>
+
+        <div>
+          <div class="eyebrow">Detailing Călărași</div>
+          <h2>Fiecare detaliu contează.</h2>
+          <p>
+            Ne concentrăm pe aspectul mașinii tale și pe atenția
+            acordată fiecărei etape a lucrării.
+          </p>
+          <ul class="features">
+            <li>Atenție la detalii</li>
+            <li>Servicii adaptate mașinii</li>
+            <li>Discuție și ofertă înainte de lucrare</li>
+            <li>Programări directe și rapide</li>
+          </ul>
+          <a class="btn"
+             href="https://wa.me/40721874239?text=Bun%C4%83!%20A%C8%99%20dori%20detalii%20despre%20serviciile%20de%20detailing."
+             target="_blank" rel="noopener">Hai să discutăm</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="eyebrow">Următoarea etapă</div>
+          <h2>Pregătit pentru un nou aspect?</h2>
+          <p>
+            Scrie-ne pe WhatsApp, spune-ne ce mașină ai și ce serviciu
+            te interesează. Îți vom putea oferi mai multe detalii.
+          </p>
+          <a class="btn"
+             href="https://wa.me/40721874239?text=Bun%C4%83!%20Doresc%20o%20ofert%C4%83%20pentru%20ma%C8%99ina%20mea."
+             target="_blank" rel="noopener">Contactează-ne pe WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Detailing Călărași. Toate drepturile rezervate.</p>
+      <p>Îngrijire auto cu atenție la detalii.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/40721874239?text=Bun%C4%83!%20Doresc%20o%20programare."
+     target="_blank" rel="noopener" aria-label="Contact WhatsApp">
+    WhatsApp
+  </a>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
